@@ -1,35 +1,65 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import './App.css'
+import React, { useState, useEffect } from 'react';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import './App.css';
+import home from './srcImages/home.png'
+import CurrentHoldings from './Pages/CurrentHoldings/CurrentHoldings.jsx';
+import DividendEntries from './Pages/DividendEntries/DividendEntries.jsx';
+import ClubPreferences from './Pages/ClubPreferences/ClubPreferences.jsx';
+import ClubHolds from './Pages/ClubHolds/ClubHolds.jsx';
+import upGreenRight from './srcImages/UpGreenRight.png'
+import downRedRight from './srcImages/DownRedRight.png'
+import RootLayout from './Pages/RootLayout.jsx';
+import HomePage from './Pages/HomePage/HomePage.jsx';
+import MagicFormula from './Pages/MagicFormula/MagicFormula.jsx';
+import Banks from './Pages/Banks/Banks.jsx';
+import Simulator from './Pages/Simulator/Simulator.jsx';
+import WatchList from './Pages/WatchList/WatchList.jsx';
+import HistoricalDividends from './Pages/HistoricalDividends/HistoricalDividends.jsx';
+import StatementSpreadSheet from './Pages/StatementSpreadSheet/StatementSpreadSheet.jsx';
 
+import {Amplify} from 'aws-amplify'
+import awsconfig from './aws-exports'
+import { Authenticator } from '@aws-amplify/ui-react';
+import '@aws-amplify/ui-react/styles.css';
+
+
+Amplify.configure(awsconfig)
+
+const router = createBrowserRouter([
+  {
+    path: '/',
+    element: <RootLayout />,
+    children: [
+      {path: '/', element: <HomePage/>},
+      {path: '/current', element: <CurrentHoldings/>},
+      {path: '/dividendentries', element: <DividendEntries/>},
+      {path: '/clubpreferences', element: <ClubPreferences/>},
+      {path: '/clubholds', element: <ClubHolds/>},
+      {path: '/magicformula', element: <MagicFormula/>},
+      {path: '/banks', element: <Banks/>},
+      {path: '/watchlist', element: <WatchList/>},
+      {path: '/historicaldividendentries', element: <HistoricalDividends/>},
+      {path: '/simulator', element: <Simulator/>},
+      {path: '/statmententries', element: <StatementSpreadSheet/>}
+    ]
+  },
+
+]);
 function App() {
-  const [count, setCount] = useState(0)
+
+
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <Authenticator>
+      {({ signOut, user }) => (
+        <div className="App">
+          <RouterProvider router={router}/>
+          <button onClick={signOut}>Sign out</button>
+        </div>
+      )}
+    </Authenticator>
+  );
 }
 
-export default App
+export default App;
+
