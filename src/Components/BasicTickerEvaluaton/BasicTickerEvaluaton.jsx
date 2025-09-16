@@ -505,7 +505,7 @@ const BasicTickerEvaluaton = (props) => {
                 */}
                 <div className='ml-20 mt-5'>
                     <InvestmentComposedChar
-                            width={700}
+                            width={620}
                             height={275}
                             data={graphData}
                             margin={{
