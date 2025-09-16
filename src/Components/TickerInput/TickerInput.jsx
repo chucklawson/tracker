@@ -65,7 +65,7 @@ const TickerInput = props => {
       
       //console.log('startDate before returning: ' + startDate)
       let year = parseInt(startDate.substring(0,startDate.indexOf('-')))
-      //console.log('year by itself: ' + year)
+     //console.log('year by itself: ' + year)
       let adjustedYear=year - 1;
       //console.log('adjustedYear: ' + adjustedYear)
       let adjustedStartDate= adjustedYear+startDate.substring(startDate.indexOf('-'))

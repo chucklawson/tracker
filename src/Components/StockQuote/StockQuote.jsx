@@ -82,7 +82,7 @@ const [currentQuote, setcurrentQuote] = useState({});
 
           //console.log('The THIRD object: '+ JSON.stringify(data[2]))
           //console.log('Second Histoical symbol: '+ data[2].symbol)
-          //console.log('Second set of Historical date at address zero: '+ data[2].historical[0].date)          
+          //console.log('Second set of Historical date at address zero: '+ data[2].historical[0].date)
 
           //console.log('Second Histoical symbol: '+ data[2].symbol)
           //console.log('Second set of Historical date at address zero: '+ data[2].historical[0].date)
@@ -90,12 +90,11 @@ const [currentQuote, setcurrentQuote] = useState({});
           //console.log('The FOURTH object: '+ JSON.stringify(data[3][0]))
           //console.log('The FOURTH object length: '+ data[3].length)
 
-          //console.log('The FIFTH object: '+ JSON.stringify(data[4]))
-          //console.log('The FIFTH object length: '+ data[4].length)
         } 
       }).catch(function (error) {
         // if there's an error, log it
-        console.log(error);
+        //console.log('Logging Error')
+        //console.log(error);
       })
       }
     //},[currentInfo,timeSeries,adjustedTimeSeries,statementAnalysisKeyMetrics,williams])
@@ -104,7 +103,7 @@ const [currentQuote, setcurrentQuote] = useState({});
 
     //const setDatObjet = (theQuote,timeSeries,adjustedTimeSeries,statmentAnalysis,larryWilliams)=>{
     const setDatObjet = (theQuote,timeSeries,adjustedTimeSeries,statmentAnalysis)=>{
-       // console.log("setting data symbol as: " + data.symbol)
+        //console.log("theQuote: " + theQuote)
         setcurrentQuote(theQuote)        
         setTimeSeriesEntries(timeSeries);
         setAdjustedTimeSeriesEntries(adjustedTimeSeries);

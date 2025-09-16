@@ -263,11 +263,13 @@ const BasicTickerEvaluaton = (props) => {
     //const onSetCurrentQuote=(currentQuoteIn,timeSeriesIn,adjustedTimeSeriesIn,statmentAnalysisKeyMetrics,larryWilliams)=>
     const onSetCurrentQuote=(currentQuoteIn,timeSeriesIn,adjustedTimeSeriesIn,statmentAnalysisKeyMetrics)=>
     {
-        //console.log("larryWilliams: " + JSON.stringify(larryWilliams));
+        //console.log("onSetCurrentQuote" );
+        //console.log("currentQuoteIn" + currentQuoteIn);
         setcurrentQuote(currentQuoteIn);
         setTimeSeries(timeSeriesIn); 
         setAdjustedTimeSeries(adjustedTimeSeriesIn) 
         setProfitLoss(currentQuoteIn)
+        //console.log("statmentAnalysisKeyMetrics" + statmentAnalysisKeyMetrics);
         setStatmentAnalysisKeyMetrics(statmentAnalysisKeyMetrics)
         //setLarryWilliams(larryWilliams)
         
@@ -284,6 +286,7 @@ const BasicTickerEvaluaton = (props) => {
 
     const setProfitLoss = (currentQuoteIn)=>
     {
+        //console.log("setProfitLoss" );
         let profitLoss = 0.0;
         if(currentQuantityOnHand!==0)
         {
@@ -336,9 +339,10 @@ const BasicTickerEvaluaton = (props) => {
     
 
     useEffect(() => {  
-        //console.log("calling dailyValues")
+        //console.log("calling dailyValues, timeSeries[0]" + timeSeries[0])
         if(timeSeries[0]!==undefined)
         {
+            //console.log("Running if(timeSeries[0]!==undefined)")
             let newData=null
             if(timeSeries[timeSeries.length-1].date < timeSeries[timeSeries.length-2].date)
             {
@@ -347,7 +351,7 @@ const BasicTickerEvaluaton = (props) => {
             }
             else{
                 newData=dailyValues(timeSeries,adjustedTimeSeries);                
-                //console.log("Did not reverse timeSeries")              
+                //console.log("Did not reverse timeSeries")
             }
             
             if(bollingerChecked)
@@ -381,7 +385,7 @@ const BasicTickerEvaluaton = (props) => {
                 //console.log("Generating Price to Equity")
                 setPriceEarningsData(getPriceToEarningsChartData(statmentAnalysisKeyMetrics))                
             }
-
+            //console.log("Calling setGraphData")
             setGraphData( newData )  
         }
     }, [currentQuote, timeSeries, bollingerChecked,lwChecked,rsiChecked,stochasticChecked,priceEquityChecked]);
@@ -389,11 +393,14 @@ const BasicTickerEvaluaton = (props) => {
     
 
     useEffect( ()=>{
-    //console.log("trying to stringify graphData")
-    //console.log(JSON.stringify(graphData))
-    //console.log('graphData.length: ' + graphData.length)
+      if(graphData.length!==undefined)
+      {
+        //console.log("trying to stringify graphData")
+        //console.log(JSON.stringify(graphData))
+        //console.log('graphData.length: ' + graphData.length)
+      }
     
-        if(graphData.length>1){
+        if((graphData.length!==undefined) && (graphData.length>1)){
             const Y1forSlope=graphData[graphData.length-1].expMovingAverage;
             //console.log('Y1forSlope: ' + Y1forSlope)
             const Y2forSlope=graphData[graphData.length-2].expMovingAverage;
@@ -486,7 +493,7 @@ const BasicTickerEvaluaton = (props) => {
             containerBackGround= {props.buttonBackgroundColor}></TickerInput>
         <StockQuote stockSymbol={tickerToGet} onSetCurrentQuote={onSetCurrentQuote} latestStartDate={startDate} latestEndDate={endDate} adjustedStartDate={adjustedStartDate}/>
         
-        {showChart === true ?
+        {(showChart === true && graphData.length!==undefined) ?
             <div className='justify-self-auto'>
                 <div className="text-1xl text-green-600 font-bold underline h-5">
                     OPEN ${currentQuote.open},   HIGH ${currentQuote.dayHigh},   LOW ${currentQuote.dayLow},   LAST ${currentQuote.price}
@@ -518,7 +525,7 @@ const BasicTickerEvaluaton = (props) => {
                 
                         
 
-                {rsiChecked === true ?
+                {(rsiChecked === true && rsiData.length !== undefined)?
                 
                 <div className='ml-20 mt-5'>
                     <div className="text-1xl text-green-600 font-bold underline h-5">
@@ -563,7 +570,7 @@ const BasicTickerEvaluaton = (props) => {
                 <React.Fragment />}
                 
 
-                {stochasticChecked === true ?
+                {(stochasticChecked === true && stochasticData.length !== undefined)?
                 
                 <div className='ml-20 mt-5'>
                     <div className="text-1xl text-green-600 font-bold underline h-5">
