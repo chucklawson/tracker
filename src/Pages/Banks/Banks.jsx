@@ -7,22 +7,28 @@ const CURRENT_HOLDINGS =
   [
 
     {
-        ticker: "COF",
-        costBasis: '129.45',
-        unitsOnHand: 541,
-        calculateAccumulatedProfitLoss: true,      
+      ticker: "COF",
+      costBasis: '129.45',
+      unitsOnHand: 541,
+      calculateAccumulatedProfitLoss: true,
     },
     {
-    ticker: "GS",
-    costBasis: '600.54',
-    unitsOnHand: 7,
-    calculateAccumulatedProfitLoss: true,
+      ticker: "GS",
+      costBasis: '600.54',
+      unitsOnHand: 7,
+      calculateAccumulatedProfitLoss: true,
     },
     {
-        ticker: "WFC",
-        costBasis: '65.47',
-        unitsOnHand: 185,
-        calculateAccumulatedProfitLoss: true,      
+      ticker: "V",
+      costBasis: '337.46',
+      unitsOnHand: 10,
+      calculateAccumulatedProfitLoss: true,
+    },
+    {
+      ticker: "WFC",
+      costBasis: '65.47',
+      unitsOnHand: 185,
+      calculateAccumulatedProfitLoss: true,
     }
 
   ];
