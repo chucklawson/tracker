@@ -81,7 +81,7 @@ const StatementInput = props => {
             }
     
             {/*placeholder='AAPL'*/}
-            <input className='py-1 px-2 rounded text-gray-700 w-full border border-green-500' type="text" onChange={tickerInputChangeHandler}
+            <input className='py-1 px-2 rounded text-gray-700 w-full border border-green-500 bg-emerald-50' type="text" onChange={tickerInputChangeHandler}
                                    style={{ width: '70px'}} value = {enteredValue}/>    
           </div>
 
@@ -93,7 +93,7 @@ const StatementInput = props => {
             }
     
             {/*placeholder='8'*/}
-            <input className='py-1 px-2 rounded text-gray-700 w-full border border-green-500' type="text" onChange={periodsInputChangeHandler}
+            <input className='py-1 px-2 rounded text-gray-700 w-full border border-green-500 bg-emerald-50' type="text" onChange={periodsInputChangeHandler}
                                    style={{ width: '70px'}} value = {periodsToUse}/>    
           </div>
 

@@ -209,7 +209,7 @@ const TickerInput = props => {
               <label className='block uppercase text-xs text-gray-200 font-bold mb-2 tracking-wider bg-red-700 rounded'> Ticker {/*{enteredValue}*/}</label>
             }
             {/*placeholder='AAPL'*/}
-              <input className='block py-1 px-2 rounded text-gray-700 w-full border border-green-500' type="text" onChange={tickerInputChangeHandler}
+              <input className='block py-1 px-2 rounded text-gray-700 w-full border border-green-500 bg-emerald-50' type="text" onChange={tickerInputChangeHandler}
                                    style={{ width: '70px'}} value = {enteredValue}/>     
           </div>     
 
@@ -218,7 +218,7 @@ const TickerInput = props => {
                 <label className='block uppercase text-xs text-gray-700 font-bold mb-2 tracking-wider'> Startdate {/*{startDate}*/}</label>:
                 <label className='block uppercase text-xs text-gray-200 font-bold mb-2 tracking-wider bg-red-700 rounded'> Startdate {/*{startDate}*/}</label>
               }
-              <input className='block py-1 px-2 rounded w-full border border-green-500'
+              <input className='block py-1 px-2 rounded w-full border border-green-500 bg-emerald-50'
                                  type='date' min='2017-01-01' max='2030-12-31' value={startDate}
                                   onChange={startDateChangeHandler}  style={{ width: '130px'}}/>     
           </div>
@@ -228,7 +228,7 @@ const TickerInput = props => {
               <label className='block uppercase text-xs text-gray-700 font-bold mb-2 tracking-wider'> Enddate {/*{endDate}*/}</label>:
               <label className='block uppercase text-xs text-gray-200 font-bold mb-2 tracking-wider bg-red-700 rounded'> Enddate {/*{endDate}*/}</label>
             }
-              <input className='block py-1 px-2 rounded w-full border border-green-500'
+              <input className='block py-1 px-2 rounded w-full border border-green-500 bg-emerald-50'
                      type='date' min='2019-01-01' max='2099-12-31' value={endDate}
                       onChange={endDateChangeHandler} style={{ width: '130px'}} />     
           </div>
