@@ -20,7 +20,7 @@ import PriceEarningsChart from '../InvestmentCharts/PriceEarningsChart.jsx';
 import {calculateOverallProfitAndLoss} from '../../lib/ProfitLoss/CalculateOverallProfitLoss.jsx'
 import {calculateBuyPoints} from '../../lib/ProfitLoss/CalculateBuyPoints.jsx'
 
-const GRAPH_SIZE_FACTOR = .40
+const GRAPH_SIZE_FACTOR = .45
 const BasicTickerEvaluaton = (props) => {
     
     //const OBTAIN_TICKER_VALUES = "OBTAIN_TICKER_VALUES";
@@ -543,7 +543,7 @@ const BasicTickerEvaluaton = (props) => {
                         RSI Measures - Speed and Magnitude of Price Change Momentum
                     </div>
                     <RelativeStrengthIndexChart
-                            width={700}
+                            width={GRAPH_SIZE_FACTOR}
                             height={175}
                             data={rsiData}
                             margin={{
@@ -563,7 +563,7 @@ const BasicTickerEvaluaton = (props) => {
                 {(lwData)&&(lwChecked === true) ?
                 <div className='ml-20 mt-5'>
                     <LarryWilliamsChart
-                            width={700}
+                            width={GRAPH_SIZE_FACTOR}
                             height={175}
                             data={lwData}
                             margin={{
