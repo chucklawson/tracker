@@ -24,12 +24,6 @@ const CURRENT_HOLDINGS =
       calculateAccumulatedProfitLoss: false,
     },
     {
-      ticker: "AAPL",
-      costBasis: '0',
-      unitsOnHand: 0,
-      calculateAccumulatedProfitLoss: false,
-    },
-    {
       ticker: "ADC",
       costBasis: '0',
       unitsOnHand: 0, 
@@ -76,12 +70,6 @@ const CURRENT_HOLDINGS =
       costBasis: '0',
       unitsOnHand: 0, 
       calculateAccumulatedProfitLoss: false,          
-    },
-    {
-      ticker: "ETN",
-      costBasis: '0',
-      unitsOnHand: 0,
-      calculateAccumulatedProfitLoss: false,
     },
     {
       ticker: "ET",
@@ -154,12 +142,6 @@ const CURRENT_HOLDINGS =
       costBasis: '0',
       unitsOnHand: 0, 
       calculateAccumulatedProfitLoss: false,          
-    },
-    {
-      ticker: "ORCL",
-      costBasis: '0',
-      unitsOnHand: 0,
-      calculateAccumulatedProfitLoss: false,
     },
     {
       ticker: "SPG",
