@@ -198,6 +198,7 @@ function CurrentHoldings() {
   const [slope, setSlope] = useState(0.0)
   const [currentHoldings,setCurrentHoldings]=useState(CURRENT_HOLDINGS);
 
+
   const onSelectTickerButtonHandler=(tickerToEvaluate)=>
   {
     setStockSymbolToFetch(tickerToEvaluate)

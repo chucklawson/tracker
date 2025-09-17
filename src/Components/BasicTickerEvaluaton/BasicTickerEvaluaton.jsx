@@ -20,7 +20,7 @@ import PriceEarningsChart from '../InvestmentCharts/PriceEarningsChart.jsx';
 import {calculateOverallProfitAndLoss} from '../../lib/ProfitLoss/CalculateOverallProfitLoss.jsx'
 import {calculateBuyPoints} from '../../lib/ProfitLoss/CalculateBuyPoints.jsx'
 
-
+const GRAPH_SIZE_FACTOR = .45
 const BasicTickerEvaluaton = (props) => {
     
     //const OBTAIN_TICKER_VALUES = "OBTAIN_TICKER_VALUES";
@@ -74,6 +74,8 @@ const BasicTickerEvaluaton = (props) => {
     const [classValuesLeft,setClassValuesLeft]=useState('');
     const [calculatedTotalProfitLoss,setCalculatedTotalProfitLoss] = useState('$ Unknown');
     const [batchQuoteSymbolsToGet,setBatchQuoteSymbolsToGet]= useState('ADBE,AMZN,AAPL,AVGO,BRK-B,CRM,DHR,EL,F,FL,GEHC,GOOGL,LLY,META,MO,MS,MSFT,NVDA,ORCL,PANW,SBUX,SWK,WFC,WYNN');
+    const [windowWidth, setWindowWidth]=useState(window.innerWidth);
+    const [graphWidth, setGraphWidth]=useState(Math.round(window.innerWidth * GRAPH_SIZE_FACTOR));
 
     useEffect(()=>{ 
         let startingDate=new Date()
@@ -115,6 +117,16 @@ const BasicTickerEvaluaton = (props) => {
             setupdateRangeValuesToFalse();
         }
     }, [updateRangeValues]);
+
+  useEffect(() => {
+    const handleResize=() =>
+      setWindowWidth(window.innerWidth);
+      setGraphWidth(Math.round(window.innerWidth * GRAPH_SIZE_FACTOR));
+      //console.log("windowWidth = " + windowWidth)
+      //console.log("graphWidth = " + graphWidth)
+      window.addEventListener('resize', handleResize);
+      return () => window.removeEventListener('resize', handleResize);
+  }, [windowWidth,graphWidth]);
 
     useEffect(()=>{
         let todaysChange=parseFloat(currentQuote.change).toFixed(2);
@@ -505,7 +517,7 @@ const BasicTickerEvaluaton = (props) => {
                 */}
                 <div className='ml-20 mt-5'>
                     <InvestmentComposedChar
-                            width={620}
+                            width={graphWidth}
                             height={275}
                             data={graphData}
                             margin={{
