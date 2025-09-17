@@ -66,13 +66,19 @@ async function batchQuote (tickersToObtain,setCalculatedTotalProfitLoss,tickerEn
 
     let totalValue=calculalteCurrentValue(currentQuote,tickerEntriesToSum)
 
+    let totalPreviousValue=calculaltePreviosValue(currentQuote,tickerEntriesToSum)
+
     let gainLossPercentage= 0.0;
     if(totalCost!==0.0)
     {
       gainLossPercentage=(((totalValue-totalCost)/totalCost)*100.0);
     }
 
-    setCalculatedTotalProfitLoss("$" + (totalValue-totalCost).toFixed(2) + ", Invested: $"+ totalCost.toFixed(2)+ ", Gain: " + gainLossPercentage.toFixed(2) + "%")
+    let currentDaysProfitLoss=(totalValue-totalPreviousValue)
+
+  //console.log("currentDaysProfitLoss: " + currentDaysProfitLoss)
+
+    setCalculatedTotalProfitLoss("$" + (totalValue-totalCost).toFixed(2) + ", Invested: $"+ totalCost.toFixed(2)+ ", Gain: " + gainLossPercentage.toFixed(2) + "%, Today: $"+currentDaysProfitLoss.toFixed(2))
 }
 
 function calculalteCurrentValue(currentQuote,tickersToEvaluate)
@@ -85,6 +91,20 @@ function calculalteCurrentValue(currentQuote,tickersToEvaluate)
         totalValue+=Number(unitsPurchased)*Number(currentQuote[i].price);
     }
     return totalValue;
+}
+
+function calculaltePreviosValue(currentQuote,tickersToEvaluate)
+{
+  let totalValue=0.0;
+  for(let i=0;i<currentQuote.length;++i)
+  {
+    let unitsPurchased=getQuantityOwnForOneTicker(currentQuote[i].symbol,tickersToEvaluate)
+    let currentTickersPreviousValue= Number(unitsPurchased * currentQuote[i].previousClose);
+    totalValue+=currentTickersPreviousValue;
+    //console.log("symbol: " + currentQuote[i].symbol + ", unitsPurchased: " + unitsPurchased + ", current price: " + currentQuote[i].price + ", previousDay: " + currentQuote[i].previousClose)
+    //console.log("Previous days value: " + ( unitsPurchased * currentQuote[i].previousClose))
+  }
+  return totalValue;
 }
 
 function getQuantityOwnForOneTicker(ticker,tickersToEvaluate)

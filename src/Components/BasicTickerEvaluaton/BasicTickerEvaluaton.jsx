@@ -20,7 +20,7 @@ import PriceEarningsChart from '../InvestmentCharts/PriceEarningsChart.jsx';
 import {calculateOverallProfitAndLoss} from '../../lib/ProfitLoss/CalculateOverallProfitLoss.jsx'
 import {calculateBuyPoints} from '../../lib/ProfitLoss/CalculateBuyPoints.jsx'
 
-const GRAPH_SIZE_FACTOR = .45
+const GRAPH_SIZE_FACTOR = .40
 const BasicTickerEvaluaton = (props) => {
     
     //const OBTAIN_TICKER_VALUES = "OBTAIN_TICKER_VALUES";
@@ -73,7 +73,6 @@ const BasicTickerEvaluaton = (props) => {
     const [slope,setSlope]=useState(0.0);
     const [classValuesLeft,setClassValuesLeft]=useState('');
     const [calculatedTotalProfitLoss,setCalculatedTotalProfitLoss] = useState('$ Unknown');
-    const [batchQuoteSymbolsToGet,setBatchQuoteSymbolsToGet]= useState('ADBE,AMZN,AAPL,AVGO,BRK-B,CRM,DHR,EL,F,FL,GEHC,GOOGL,LLY,META,MO,MS,MSFT,NVDA,ORCL,PANW,SBUX,SWK,WFC,WYNN');
     const [windowWidth, setWindowWidth]=useState(window.innerWidth);
     const [graphWidth, setGraphWidth]=useState(Math.round(window.innerWidth * GRAPH_SIZE_FACTOR));
 

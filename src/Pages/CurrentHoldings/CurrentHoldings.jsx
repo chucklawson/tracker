@@ -55,8 +55,10 @@ const CURRENT_HOLDINGS =
     },
     {
       ticker: "COF",
-      costBasis: '167.90',
-      unitsOnHand: 217,
+      //costBasis: '167.90',
+      //unitsOnHand: 217,
+      costBasis: '129.45',
+      unitsOnHand: 541,
       calculateAccumulatedProfitLoss: true,
     },
     {
@@ -102,15 +104,15 @@ const CURRENT_HOLDINGS =
       calculateAccumulatedProfitLoss: true,
     },
     {
-      ticker: "HD",
-      costBasis: '414.22',
-      unitsOnHand: 3,
-      calculateAccumulatedProfitLoss: true,
-    },
-    {
       ticker: "GS",
       costBasis: '600.54',
       unitsOnHand: 7,
+      calculateAccumulatedProfitLoss: true,
+    },
+    {
+      ticker: "HD",
+      costBasis: '414.22',
+      unitsOnHand: 3,
       calculateAccumulatedProfitLoss: true,
     },
     {
