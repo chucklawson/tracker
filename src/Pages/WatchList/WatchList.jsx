@@ -72,6 +72,12 @@ const CURRENT_HOLDINGS =
       calculateAccumulatedProfitLoss: false,          
     },
     {
+      ticker: "ETN",
+      costBasis: '0',
+      unitsOnHand: 0,
+      calculateAccumulatedProfitLoss: false,
+    },
+    {
       ticker: "ET",
       costBasis: '0',
       unitsOnHand: 0, 
@@ -79,6 +85,12 @@ const CURRENT_HOLDINGS =
     },
     {
       ticker: "GLD",
+      costBasis: '0',
+      unitsOnHand: 0,
+      calculateAccumulatedProfitLoss: false,
+    },
+    {
+      ticker: "HD",
       costBasis: '0',
       unitsOnHand: 0,
       calculateAccumulatedProfitLoss: false,
@@ -142,6 +154,12 @@ const CURRENT_HOLDINGS =
       costBasis: '0',
       unitsOnHand: 0, 
       calculateAccumulatedProfitLoss: false,          
+    },
+    {
+      ticker: "ORCL",
+      costBasis: '0',
+      unitsOnHand: 0,
+      calculateAccumulatedProfitLoss: false,
     },
     {
       ticker: "SPG",

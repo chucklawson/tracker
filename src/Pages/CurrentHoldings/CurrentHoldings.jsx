@@ -86,12 +86,6 @@ const CURRENT_HOLDINGS =
       calculateAccumulatedProfitLoss: true,
     },
     {
-      ticker: "ETN",
-      costBasis: '358.50',
-      unitsOnHand: 5,
-      calculateAccumulatedProfitLoss: true,
-    },
-    {
       ticker: "GEV",
       costBasis: '460.35',
       unitsOnHand: 14,
@@ -107,12 +101,6 @@ const CURRENT_HOLDINGS =
       ticker: "GS",
       costBasis: '600.54',
       unitsOnHand: 7,
-      calculateAccumulatedProfitLoss: true,
-    },
-    {
-      ticker: "HD",
-      costBasis: '414.22',
-      unitsOnHand: 3,
       calculateAccumulatedProfitLoss: true,
     },
     {
@@ -149,12 +137,6 @@ const CURRENT_HOLDINGS =
       ticker: "O",
       costBasis: '59.07',
       unitsOnHand: 30,
-      calculateAccumulatedProfitLoss: true,
-    },
-    {
-      ticker: "ORCL",
-      costBasis: '300.02',
-      unitsOnHand: 10,
       calculateAccumulatedProfitLoss: true,
     },
     {
