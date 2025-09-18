@@ -49,8 +49,8 @@ const CURRENT_HOLDINGS =
     },
     {
       ticker: "BA",
-      costBasis: '223.61',
-      unitsOnHand: 20,
+      costBasis: '222.03',
+      unitsOnHand: 25,
       calculateAccumulatedProfitLoss: true,
     },
     {
@@ -75,8 +75,8 @@ const CURRENT_HOLDINGS =
     },
     {
       ticker: "CSCO",
-      costBasis: '67.70',
-      unitsOnHand: 90,
+      costBasis: '67.34',
+      unitsOnHand: 40,
       calculateAccumulatedProfitLoss: true,
     },
     {
