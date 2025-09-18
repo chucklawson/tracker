@@ -37,8 +37,11 @@ const TradingRangeIndicator = props => {
                     props.currentValues === true ?
                     <div>                        
                         <div className="text-gray-600 font-normal text-xs mt-3 mb-5">
-                            Open: ${props.currentQuote.open}, Low: ${props.currentQuote.dayLow}, High: ${props.currentQuote.dayHigh}, Last: ${props.currentQuote.price}
+                            Low: ${props.currentQuote.dayLow}, High: ${props.currentQuote.dayHigh}
                         </div>
+                      <div className="text-gray-600 font-normal text-xs mt-3 mb-5">
+                          Open: ${props.currentQuote.open}, Last: ${props.currentQuote.price}
+                      </div>
                         <div className="text-gray-600 font-normal text-xs mt-3 mb-5">
                             EPS: ${props.currentQuote.eps},      PE: {props.currentQuote.pe}
                         </div>

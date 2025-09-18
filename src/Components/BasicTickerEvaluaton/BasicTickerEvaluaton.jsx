@@ -92,7 +92,7 @@ const BasicTickerEvaluaton = (props) => {
     setEndDate(convertDateForDateInputPicker(tempDate)); 
         //setStartDate('2023-02-03');
         //setEndDate('2023-03-09');
-        setClassValuesLeft('col-start-1 col-span-3 m-5 rounded-md' + props.backgroundLeft)
+        setClassValuesLeft('col-start-1 col-span-2 m-5 rounded-md' + props.backgroundLeft)
     },[])
     
     // request ticker data
@@ -440,7 +440,7 @@ const BasicTickerEvaluaton = (props) => {
         </div>
         
 
-        <div className='col-start-4 col-span-6'>
+        <div className='col-start-3 col-span-7'>
         <div className='text-1xl text-gray-600 font-bold underline h-5 justify-start mt-3'>
             <label className='pl-2 pr-2'>
                 <input
@@ -741,11 +741,11 @@ const BasicTickerEvaluaton = (props) => {
                                 </div>
                            </div>}
                         {percentageChangeAcrossRange >= 0.0 ?
-                            <div className="text-1xl text-green-600 font-bold underline h-5">
-                                Range change % Gain: {percentageChangeAcrossRange} %
+                            <div className="text-1xl text-green-600 font-bold underline h-1">
+                                Rng chg % Gain: {percentageChangeAcrossRange} %
                             </div> :
-                            <div className="text-1xl text-red-600 font-bold underline h-5">
-                                Range change % Gain: {percentageChangeAcrossRange} %
+                            <div className="text-1xl text-red-600 font-bold underline h-1">
+                                Rng chg % Gain: {percentageChangeAcrossRange} %
                             </div>
                         }
                 </div> :
