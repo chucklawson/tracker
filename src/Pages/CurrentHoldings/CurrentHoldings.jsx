@@ -31,8 +31,8 @@ const CURRENT_HOLDINGS =
     },
     {
       ticker: "AMD",
-      costBasis: '164.00',
-      unitsOnHand: 40,
+      costBasis: '163.25',
+      unitsOnHand: 20,
       calculateAccumulatedProfitLoss: true,
     },
     {
@@ -107,6 +107,12 @@ const CURRENT_HOLDINGS =
       ticker: "HON",
       costBasis: '226.37',
       unitsOnHand: 20,
+      calculateAccumulatedProfitLoss: true,
+    },
+    {
+      ticker: "INTC",
+      costBasis: '30.25',
+      unitsOnHand: 40,
       calculateAccumulatedProfitLoss: true,
     },
     {
