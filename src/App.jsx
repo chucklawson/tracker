@@ -16,6 +16,7 @@ import Simulator from './Pages/Simulator/Simulator.jsx';
 import WatchList from './Pages/WatchList/WatchList.jsx';
 import HistoricalDividends from './Pages/HistoricalDividends/HistoricalDividends.jsx';
 import StatementSpreadSheet from './Pages/StatementSpreadSheet/StatementSpreadSheet.jsx';
+import SummarySpreadSheet from './Pages/SummarySpreadSheet/SummarySpreadSheet.jsx';
 
 import {Amplify} from 'aws-amplify'
 import awsconfig from './aws-exports'
@@ -40,7 +41,8 @@ const router = createBrowserRouter([
       {path: '/watchlist', element: <WatchList/>},
       {path: '/historicaldividendentries', element: <HistoricalDividends/>},
       {path: '/simulator', element: <Simulator/>},
-      {path: '/statmententries', element: <StatementSpreadSheet/>}
+      {path: '/statmententries', element: <StatementSpreadSheet/>},
+      {path: '/summaryentries', element: <SummarySpreadSheet/>}
     ]
   },
 

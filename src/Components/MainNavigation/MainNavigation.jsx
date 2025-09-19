@@ -26,8 +26,8 @@ return(
             <Tab pagePath='/banks' tabImage = {banks} tabText='Financial' tabWidth='150px'/>   
             <Tab pagePath='/watchlist' tabImage = {budget} tabText='Watchlist' tabWidth='185px'/>         
             <Tab pagePath='/statmententries' tabImage = {budget} tabText='Statements' tabWidth='185px'/> 
-            <Tab pagePath='/historicaldividendentries' tabImage = {budget} tabText='Dividends' tabWidth='185px'/>              
-            <Tab pagePath='/simulator' tabImage = {robot} tabText='Simulator' tabWidth='185px'/>
+            <Tab pagePath='/historicaldividendentries' tabImage = {budget} tabText='Dividends' tabWidth='185px'/>
+            <Tab pagePath='/summaryentries' tabImage = {robot} tabText='Summary' tabWidth='185px'/>
            
         </div>
 

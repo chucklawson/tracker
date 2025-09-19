@@ -43,6 +43,7 @@ async function batchQuote (tickersToObtain,setCalculatedTotalProfitLoss,tickerEn
     const uniqueValue = '25a5fa6deb331d46e42609787aa281fe';    
     let currentInfo= `https://financialmodelingprep.com/api/v3/quote/${tickersToObtain}?apikey=${uniqueValue}`;
     let currentQuote = {};
+    //console.log("currentInfo: "+ currentInfo)
 
     //console.log("tickersToEvaluate: " + tickersToObtain)
         await Promise.all([
