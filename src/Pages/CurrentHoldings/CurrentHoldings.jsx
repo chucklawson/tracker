@@ -110,12 +110,6 @@ const CURRENT_HOLDINGS =
       calculateAccumulatedProfitLoss: true,
     },
     {
-      ticker: "INTC",
-      costBasis: '30.25',
-      unitsOnHand: 40,
-      calculateAccumulatedProfitLoss: true,
-    },
-    {
       ticker: "META",
       costBasis: '662.21',
       unitsOnHand: 25,
@@ -165,8 +159,8 @@ const CURRENT_HOLDINGS =
     },
     {
       ticker: "V",
-      costBasis: '337.46',
-      unitsOnHand: 10,
+      costBasis: '336.76',
+      unitsOnHand: 15,
       calculateAccumulatedProfitLoss: true,
     },
     {
