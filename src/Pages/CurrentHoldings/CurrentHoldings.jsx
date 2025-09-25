@@ -129,8 +129,8 @@ const CURRENT_HOLDINGS =
     },
     {
       ticker: "NLY",
-      costBasis: '20.12',
-      unitsOnHand: 350,
+      costBasis: '20.20',
+      unitsOnHand: 400,
       calculateAccumulatedProfitLoss: true,
     },
     {

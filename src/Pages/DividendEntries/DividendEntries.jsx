@@ -17,10 +17,10 @@ const CURRENT_HOLDINGS =
     },
     {
       ticker: "NLY",
-      costBasis: '19.986', 
-      unitsOnHand: 300,
+      costBasis: '20.20',
+      unitsOnHand: 400,
       calculateAccumulatedProfitLoss: true,
-      baseYield: '13.00',    
+      baseYield: '13.86',
     },
     {
       ticker: "USA",
