@@ -14,9 +14,12 @@ export default class StandardMovingAverage {
       let datapoints=this.generateTheDataPointsSimpleMovingAverage( this.numberOfDaystoLookBack,this.oneYearOfData)
 
       //console.log('datapoints returned: ' + datapoints.length)
+      //console.log('this.numberOfDaystoLookBack = ' +this.numberOfDaystoLookBack)
+      //console.log('this.accumulatedChartData.length: ' + this.accumulatedChartData.length)
       //console.log('accumulatedChartData: ' + JSON.stringify(this.accumulatedChartData))
       //console.log('accumulatedChartData to match up against: ' + this.accumulatedChartData.length)
-      //.log('starting date = ' +this.accumulatedChartData[0].dateOfClose)
+      //console.log('starting date = ' +this.accumulatedChartData[0].dateOfClose)
+
       
       let commonStartAddress=0;
       for(let i=0;i<datapoints.length;++i)
@@ -31,16 +34,28 @@ export default class StandardMovingAverage {
 
       let adjustedChartData = [];
       let k=commonStartAddress;
+
+      let dataPointsToResolve = this.accumulatedChartData.length;
+      //console.log('dataPointsToResolve: ' + dataPointsToResolve)
+      //console.log('this.numberOfDaystoLookBack: ' + this.numberOfDaystoLookBack)
+      //console.log('datapoints.length: ' + datapoints.length)
+      if(dataPointsToResolve >= (datapoints.length-this.numberOfDaystoLookBack))
+      {
+        dataPointsToResolve=((datapoints.length-this.numberOfDaystoLookBack)-1);
+      }
+
+      //console.log('dataPointsToResolve: ' + dataPointsToResolve)
+      //for(let j=0; j < dataPointsToResolve;)
       for(let j=0; j < this.accumulatedChartData.length;)
       {
-        /*
-        console.log('j: ' + j + ', k: ' +k)
-        console.log('this.accumulatedChartData[j].simpleMovingAverage: ' + this.accumulatedChartData[j].simpleMovingAverage.toString())
-        console.log('datapoints[k].calculatedValue: ' + datapoints[k].calculatedValue.toString())
 
-        console.log('this.accumulatedChartData[j].dateOfClose: ' + this.accumulatedChartData[j].dateOfClose)
-        console.log('this.accumulatedChartData[j].dailyClosingPrice: ' + this.accumulatedChartData[j].dailyClosingPrice)
-        */
+        //console.log('j: ' + j + ', k: ' +k)
+        //console.log('this.accumulatedChartData[j].simpleMovingAverage: ' + this.accumulatedChartData[j].simpleMovingAverage.toString())
+        //console.log('datapoints[k].calculatedValue: ' + datapoints[k].calculatedValue.toString())
+
+        //console.log('this.accumulatedChartData[j].dateOfClose: ' + this.accumulatedChartData[j].dateOfClose)
+        //console.log('this.accumulatedChartData[j].dailyClosingPrice: ' + this.accumulatedChartData[j].dailyClosingPrice)
+
         let adjustedChartDataEntry = new StandardChartData(this.accumulatedChartData[j].dateOfClose,this.accumulatedChartData[j].dailyClosingPrice,datapoints[k].calculatedValue,0.0,0.0,0.0,0.0,0.0,0.0)
         //console.log('adjustedChartDataEntry: ' + adjustedChartDataEntry.toString())
         adjustedChartData.push(adjustedChartDataEntry)

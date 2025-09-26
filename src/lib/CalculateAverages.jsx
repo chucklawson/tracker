@@ -36,14 +36,22 @@ export function dailyValues(standardValuesIn, adjustedToContainFullYearOfDataVal
     //console.log("accumulatedChartData.length: " + accumulatedChartData.length)
     // modified 083123 from 33 to 100, then back again
     let numberOfDaysToLookBack=33;
+    //console.log("calling StandardMovingAverage where numberOfDaysToLookBack: " + numberOfDaysToLookBack)
     let standardAverages = new StandardMovingAverage(adjustedToContainFullYearOfDataValuesIn,numberOfDaysToLookBack);
     accumulatedChartData=standardAverages.generateTheAverages(accumulatedChartData)
+    //console.log("Got past accumulatedChartData")
 
     let numberOfDaysToLookBackExponentially=10;
     let exponentialMovingAverages = new ExponentialMovingAverage(adjustedToContainFullYearOfDataValuesIn,numberOfDaysToLookBackExponentially);
     accumulatedChartData=exponentialMovingAverages.generateTheAverages(accumulatedChartData)
 
+
     numberOfDaysToLookBack=200;
+    if(numberOfDaysToLookBack>=standardValuesIn.length)
+    {
+      numberOfDaysToLookBack=standardValuesIn.length-1;
+    }
+    //console.log('numberOfDaysToLookBack: '+ numberOfDaysToLookBack)
     let twoHundredDayChartData = [];
     let twoHundredDayMoveingAverage = new StandardMovingAverage(adjustedToContainFullYearOfDataValuesIn,numberOfDaysToLookBack);
     twoHundredDayChartData=twoHundredDayMoveingAverage.generateTheAverages(accumulatedChartData)
@@ -55,6 +63,10 @@ export function dailyValues(standardValuesIn, adjustedToContainFullYearOfDataVal
       }
 
     numberOfDaysToLookBack=50;
+    if(numberOfDaysToLookBack>=adjustedToContainFullYearOfDataValuesIn.length)
+    {
+      numberOfDaysToLookBack=standardValuesIn.length-1;
+    }
     let fiftyDayChartData = [];
     let fiftyDayMoveingAverage = new StandardMovingAverage(adjustedToContainFullYearOfDataValuesIn,numberOfDaysToLookBack);
     fiftyDayChartData=fiftyDayMoveingAverage.generateTheAverages(accumulatedChartData)

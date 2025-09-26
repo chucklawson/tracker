@@ -43,8 +43,8 @@ const CURRENT_HOLDINGS =
     },
     {
       ticker: "AVGO",
-      costBasis: '265.03',
-      unitsOnHand: 50,
+      costBasis: '269.99',
+      unitsOnHand: 54,
       calculateAccumulatedProfitLoss: true,
     },
     {
