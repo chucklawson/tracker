@@ -128,6 +128,12 @@ const CURRENT_HOLDINGS =
       calculateAccumulatedProfitLoss: true,
     },
     {
+      ticker: "NKE",
+      costBasis: '69.13',
+      unitsOnHand: 20,
+      calculateAccumulatedProfitLoss: true,
+    },
+    {
       ticker: "NVDA",
       costBasis: '52.37',
       unitsOnHand: 290,
