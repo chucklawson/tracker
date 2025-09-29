@@ -164,12 +164,6 @@ const CURRENT_HOLDINGS =
       calculateAccumulatedProfitLoss: true,
     },
     {
-      ticker: "V",
-      costBasis: '336.76',
-      unitsOnHand: 15,
-      calculateAccumulatedProfitLoss: true,
-    },
-    {
       ticker: "WFC",
       costBasis: '66.51',
       unitsOnHand: 200,
