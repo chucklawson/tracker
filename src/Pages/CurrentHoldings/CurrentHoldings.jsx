@@ -111,8 +111,8 @@ const CURRENT_HOLDINGS =
     },
     {
       ticker: "META",
-      costBasis: '662.21',
-      unitsOnHand: 25,
+      costBasis: '671.17',
+      unitsOnHand: 30,
       calculateAccumulatedProfitLoss: true,
     },
     {
@@ -129,8 +129,8 @@ const CURRENT_HOLDINGS =
     },
     {
       ticker: "NKE",
-      costBasis: '69.13',
-      unitsOnHand: 20,
+      costBasis: '70.08',
+      unitsOnHand: 30,
       calculateAccumulatedProfitLoss: true,
     },
     {
