@@ -81,8 +81,8 @@ const CURRENT_HOLDINGS =
     },
     {
       ticker: "ENB",
-      costBasis: '37.14',
-      unitsOnHand: 95,
+      costBasis: '38.86',
+      unitsOnHand: 110,
       calculateAccumulatedProfitLoss: true,
     },
     {
