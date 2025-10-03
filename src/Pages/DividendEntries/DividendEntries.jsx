@@ -10,10 +10,10 @@ const CURRENT_HOLDINGS =
 
     {
       ticker: "ENB",
-      costBasis: '37.14',
-      unitsOnHand: 95,
+      costBasis: '38.86',
+      unitsOnHand: 110,
       calculateAccumulatedProfitLoss: true,
-      baseYield: '7.42',          
+      baseYield: '5.56',
     },
     {
       ticker: "NLY",
