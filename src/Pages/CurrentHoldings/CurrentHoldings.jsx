@@ -63,8 +63,8 @@ const CURRENT_HOLDINGS =
     },
     {
       ticker: "COST",
-      costBasis: '977.75',
-      unitsOnHand: 6,
+      costBasis: '968.48',
+      unitsOnHand: 7,
       calculateAccumulatedProfitLoss: true,
     },
     {
