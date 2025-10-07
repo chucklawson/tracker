@@ -87,8 +87,8 @@ const CURRENT_HOLDINGS =
     },
     {
       ticker: "GEV",
-      costBasis: '460.35',
-      unitsOnHand: 14,
+      costBasis: '478.18',
+      unitsOnHand: 16,
       calculateAccumulatedProfitLoss: true,
     },
     {
