@@ -30,11 +30,17 @@ const CURRENT_HOLDINGS =
       calculateAccumulatedProfitLoss: true,
     },
     {
-      ticker: "AMD",
-      costBasis: '163.25',
-      unitsOnHand: 20,
+      ticker: "AEM",
+      costBasis: '162.50',
+      unitsOnHand: 9,
       calculateAccumulatedProfitLoss: true,
     },
+    {
+    ticker: "AMD",
+    costBasis: '163.25',
+    unitsOnHand: 20,
+    calculateAccumulatedProfitLoss: true,
+  },
     {
       ticker: "AMZN",
       costBasis: '162.46',
@@ -119,6 +125,12 @@ const CURRENT_HOLDINGS =
       ticker: "MSFT",
       costBasis: '381.54',
       unitsOnHand: 30,
+      calculateAccumulatedProfitLoss: true,
+    },
+    {
+      ticker: "NEM",
+      costBasis: '85.68',
+      unitsOnHand: 15,
       calculateAccumulatedProfitLoss: true,
     },
     {
