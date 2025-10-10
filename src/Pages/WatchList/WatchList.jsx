@@ -54,7 +54,7 @@ const CURRENT_HOLDINGS =
       calculateAccumulatedProfitLoss: false,          
     },
     {
-      ticker: "COST",
+      ticker: "CRWV",
       costBasis: '0',
       unitsOnHand: 0,
       calculateAccumulatedProfitLoss: false,
