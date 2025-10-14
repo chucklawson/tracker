@@ -19,8 +19,8 @@ const CURRENT_HOLDINGS =
     },
     {
       ticker: "QQQ",
-      costBasis: '0',
-      unitsOnHand: 0,
+      costBasis: '596.99',
+      unitsOnHand: 4,
       calculateAccumulatedProfitLoss: false,
     },
     {
