@@ -135,8 +135,8 @@ const CURRENT_HOLDINGS =
     },
     {
       ticker: "NVDA",
-      costBasis: '52.37',
-      unitsOnHand: 290,
+      costBasis: '56.62',
+      unitsOnHand: 300,
       calculateAccumulatedProfitLoss: true,
     },
     {
