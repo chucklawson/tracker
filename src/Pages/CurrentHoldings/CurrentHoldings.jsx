@@ -80,12 +80,6 @@ const CURRENT_HOLDINGS =
       calculateAccumulatedProfitLoss: true,
     },
     {
-      ticker: "CSCO",
-      costBasis: '67.34',
-      unitsOnHand: 40,
-      calculateAccumulatedProfitLoss: true,
-    },
-    {
       ticker: "ENB",
       costBasis: '38.86',
       unitsOnHand: 110,
@@ -123,8 +117,8 @@ const CURRENT_HOLDINGS =
     },
     {
       ticker: "MSFT",
-      costBasis: '397.15',
-      unitsOnHand: 34,
+      costBasis: '411.36',
+      unitsOnHand: 39,
       calculateAccumulatedProfitLoss: true,
     },
     {
@@ -137,12 +131,6 @@ const CURRENT_HOLDINGS =
       ticker: "NLY",
       costBasis: '20.20',
       unitsOnHand: 400,
-      calculateAccumulatedProfitLoss: true,
-    },
-    {
-      ticker: "NKE",
-      costBasis: '70.08',
-      unitsOnHand: 30,
       calculateAccumulatedProfitLoss: true,
     },
     {
