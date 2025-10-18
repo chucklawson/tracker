@@ -37,8 +37,8 @@ const CURRENT_HOLDINGS =
     },
     {
     ticker: "AMD",
-    costBasis: '163.25',
-    unitsOnHand: 20,
+    costBasis: '177.62',
+    unitsOnHand: 25,
     calculateAccumulatedProfitLoss: true,
   },
     {
@@ -92,6 +92,12 @@ const CURRENT_HOLDINGS =
       calculateAccumulatedProfitLoss: true,
     },
     {
+      ticker: "GLD",
+      costBasis: '389.16',
+      unitsOnHand: 16,
+      calculateAccumulatedProfitLoss: true,
+    },
+    {
       ticker: "GOOGL",
       costBasis: '202.89',
       unitsOnHand: 25,
@@ -122,8 +128,20 @@ const CURRENT_HOLDINGS =
       calculateAccumulatedProfitLoss: true,
     },
     {
+      ticker: "ORCL",
+      costBasis: '303.61',
+      unitsOnHand: 6,
+      calculateAccumulatedProfitLoss: true,
+    },
+    {
       ticker: "NEM",
-      costBasis: '85.68',
+      costBasis: '89.73',
+      unitsOnHand: 25,
+      calculateAccumulatedProfitLoss: true,
+    },
+    {
+      ticker: "NKE",
+      costBasis: '66.55',
       unitsOnHand: 15,
       calculateAccumulatedProfitLoss: true,
     },
