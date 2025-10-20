@@ -94,7 +94,7 @@ const CURRENT_HOLDINGS =
     {
       ticker: "GLD",
       costBasis: '389.16',
-      unitsOnHand: 16,
+      unitsOnHand: 4,
       calculateAccumulatedProfitLoss: true,
     },
     {
