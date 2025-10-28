@@ -103,7 +103,7 @@ const [currentQuote, setcurrentQuote] = useState({});
 
     //const setDatObjet = (theQuote,timeSeries,adjustedTimeSeries,statmentAnalysis,larryWilliams)=>{
     const setDatObjet = (theQuote,timeSeries,adjustedTimeSeries,statmentAnalysis)=>{
-        //console.log("theQuote: " + theQuote)
+        //console.log("theQuote: " + theQuote[0].open)
         setcurrentQuote(theQuote)        
         setTimeSeriesEntries(timeSeries);
         setAdjustedTimeSeriesEntries(adjustedTimeSeries);

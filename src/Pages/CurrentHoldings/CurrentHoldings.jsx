@@ -98,6 +98,12 @@ const CURRENT_HOLDINGS =
       calculateAccumulatedProfitLoss: true,
     },
     {
+      ticker: "GLW",
+      costBasis: '83.5',
+      unitsOnHand: 20,
+      calculateAccumulatedProfitLoss: true,
+    },
+    {
       ticker: "GOOGL",
       costBasis: '202.89',
       unitsOnHand: 25,
