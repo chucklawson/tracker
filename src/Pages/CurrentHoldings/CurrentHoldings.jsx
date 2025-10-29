@@ -129,8 +129,8 @@ const CURRENT_HOLDINGS =
     },
     {
       ticker: "NKE",
-      costBasis: '66.55',
-      unitsOnHand: 15,
+      costBasis: '66.27',
+      unitsOnHand: 30,
       calculateAccumulatedProfitLoss: true,
     },
     {
