@@ -30,12 +30,6 @@ const CURRENT_HOLDINGS =
       calculateAccumulatedProfitLoss: true,
     },
     {
-      ticker: "AEM",
-      costBasis: '162.50',
-      unitsOnHand: 9,
-      calculateAccumulatedProfitLoss: true,
-    },
-    {
     ticker: "AMD",
     costBasis: '177.62',
     unitsOnHand: 25,
@@ -51,12 +45,6 @@ const CURRENT_HOLDINGS =
       ticker: "AVGO",
       costBasis: '269.99',
       unitsOnHand: 54,
-      calculateAccumulatedProfitLoss: true,
-    },
-    {
-      ticker: "BA",
-      costBasis: '222.20',
-      unitsOnHand: 25,
       calculateAccumulatedProfitLoss: true,
     },
     {
@@ -89,12 +77,6 @@ const CURRENT_HOLDINGS =
       ticker: "GEV",
       costBasis: '478.18',
       unitsOnHand: 16,
-      calculateAccumulatedProfitLoss: true,
-    },
-    {
-      ticker: "GLD",
-      costBasis: '389.16',
-      unitsOnHand: 4,
       calculateAccumulatedProfitLoss: true,
     },
     {
