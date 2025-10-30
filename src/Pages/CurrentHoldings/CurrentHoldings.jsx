@@ -105,8 +105,8 @@ const CURRENT_HOLDINGS =
     },
     {
       ticker: "META",
-      costBasis: '676.79',
-      unitsOnHand: 35,
+      costBasis: '673.05',
+      unitsOnHand: 50,
       calculateAccumulatedProfitLoss: true,
     },
     {

@@ -5,12 +5,27 @@ export default class ExponentialMovingAverage {
     constructor(oneYearOfDataIn,numberOfDaystoLookBackIn) {
       this.oneYearOfData = oneYearOfDataIn;
       this.numberOfDaystoLookBack=numberOfDaystoLookBackIn;
+      /*
+      console.log("This is what is in oneYearOfDataIn within the constructor for ExponentialMovingAverage:");
+      for (let key in oneYearOfDataIn[0]) {
+        console.log(key);
+      }
+      */
+
     }
 
     generateTheAverages(accumulatedChartDataIn)
     {
       this.accumulatedChartData=accumulatedChartDataIn;
       //console.log("calling this.generateTheDataPointsFormTwo_UpToDate, this.numberOfDaystoLookBack: " + this.numberOfDaystoLookBack + ', this.oneYearOfData.length: ' + this.oneYearOfData.length)
+/*
+      console.log("This is what is in accumulatedChartDataIn within generateTheAverages:");
+      for (let key in accumulatedChartDataIn[0]) {
+        console.log(key);
+      }
+*/
+
+
 
       let datapoints=this.generateTheDataPointsFormTwo_UpToDate( this.numberOfDaystoLookBack,this.oneYearOfData)
 
@@ -64,6 +79,12 @@ export default class ExponentialMovingAverage {
 
     generateTheDataPointsFormTwo_UpToDate( howManyDaysInAverage, eodResponseInfo)
     {
+      /*
+      console.log("This is what is in eodResponseInfo within generateTheDataPointsFormTwo_UpToDate:");
+      for (let key in eodResponseInfo[0]) {
+        console.log(key);
+      }
+       */
         //console.log("eodResponseInfo.length: , howManyDaysInAverage: ", eodResponseInfo.length, howManyDaysInAverage);
         if (eodResponseInfo.length < howManyDaysInAverage)
         {
@@ -79,6 +100,8 @@ export default class ExponentialMovingAverage {
         //console.log('theFirstValue: ' + theFirstValue)
         let theFirstDate = eodResponseInfo[(howManyDaysInAverage - 1)].date;
         //console.log('theFirstDate: ' + theFirstDate)
+      //console.log('theFirstDate: ' + eodResponseInfo.toString());
+
 
 
         dataPointsForFormTwo.push(new DataPoint(theFirstDate, theFirstValue));
@@ -111,6 +134,12 @@ export default class ExponentialMovingAverage {
     generateOneDataPoint( startAddress,numberOfDaystoLookBack,eodResponseInfo)
     {
         //console.log('generateOneDataPoint startAddress:' + startAddress + ', numberOfDaystoLookBack: ' + numberOfDaystoLookBack + ', eodResponseInfo.length: '+eodResponseInfo.length)
+      /*
+      console.log("This is what is in eodResponseInfo within generateOneDataPoint:");
+      for (let key in eodResponseInfo[0]) {
+          console.log(key);
+        }
+       */
         if (numberOfDaystoLookBack <= 0)
         {
             console.log('Returning numberOfDaystoLookBack <= 0')
@@ -130,6 +159,11 @@ export default class ExponentialMovingAverage {
         for (let i = startAddress + 1 - numberOfDaystoLookBack; i < startAddress + 1; ++i)
         {
             summedCloses += parseFloat(eodResponseInfo[i].close);
+
+            //console.log("eodResponseInfo[i].close: " + eodResponseInfo[i].close)
+            //console.log("eodResponseInfo[i].unadjustedVolume: " + eodResponseInfo[i].open)
+            //console.log("eodResponseInfo[i].unadjustedVolume: " + eodResponseInfo[i].)
+
         }
 
         let devisor = numberOfDaystoLookBack;
@@ -166,6 +200,16 @@ export default class ExponentialMovingAverage {
     // Logger is the logger
     generateExponentialDataPointFormTwo(currentAddressToEvaluate,lengthOfAverage,previousDataPoint,eodResponseInfo)
     {
+      /*
+      console.log("This is what is in eodResponseInfo within generateExponentialDataPointFormTwo:");
+      for (let key in eodResponseInfo[0]) {
+        console.log(key);
+      }
+      console.log("This is what is in previousDataPoint within generateExponentialDataPointFormTwo:");
+      for (let key in previousDataPoint) {
+        console.log(key);
+      }
+      */
         //console.log('generateExponentialDataPointFormTwo currentAddressToEvaluate: ' + currentAddressToEvaluate + ', lengthOfAverage: ' + lengthOfAverage + ', previousDataPoint: ' + previousDataPoint.toString() + ', eodResponseInfo.length: ' +eodResponseInfo.length)
         if (lengthOfAverage <= 0)
         {

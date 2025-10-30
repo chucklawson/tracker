@@ -291,6 +291,7 @@ const BasicTickerEvaluaton = (props) => {
             setUpdateRangeValues(true);
 
             //console.log('timeSeriesIn[0].close: ' + timeSeriesIn[0].close + ', timeSeriesIn[timeSeriesIn.length-1].close: '+timeSeriesIn[timeSeriesIn.length-1].close)
+
         }
 
     }
