@@ -111,8 +111,8 @@ const CURRENT_HOLDINGS =
     },
     {
       ticker: "MSFT",
-      costBasis: '411.36',
-      unitsOnHand: 39,
+      costBasis: '416.72',
+      unitsOnHand: 41,
       calculateAccumulatedProfitLoss: true,
     },
     {
