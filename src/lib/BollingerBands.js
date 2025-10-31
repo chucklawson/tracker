@@ -14,6 +14,19 @@ export default class BollingerBands {
         //console.log("BollingerBands valuesIn.length: " + this.standardValues.length)
         //console.log("BollingerBands adjustedValues.length: " + this.adjustedToContainFullYearOfDataValues.length)
         //console.log("BollingerBands numberOfDaystoLookBack: " + this.numberOfDaystoLookBack)
+/*
+      console.log("This is standardValuesIn within BollingerBands.Constructor:");
+      let keys = Object.keys(standardValuesIn[0])
+      let values = keys.map(key => `${key}: ${Reflect.get(standardValuesIn[0],key)}`)
+      console.log(values)
+
+      console.log("This is adjustedToContainFullYearOfDataValuesIn within BollingerBands.Constructor:");
+       keys = Object.keys(adjustedToContainFullYearOfDataValuesIn[0])
+       values = keys.map(key => `${key}: ${Reflect.get(adjustedToContainFullYearOfDataValuesIn[0],key)}`)
+      console.log(values)
+
+ */
+
       }
 
     generateBollingerBands()
@@ -109,15 +122,28 @@ export default class BollingerBands {
         }
 
         return bollingerBands;
-      }
+    }// end of get bollinger bands
 
       generateOneSetOfDataPoints(dataToEvaluate)
       {
+        //console.log("This is eodResponseInfo within BollingerBands.generateOneSetOfDataPoints:");
+        //const keys = Object.keys(dataToEvaluate[0])
+        //const values = keys.map(key => `${key}: ${Reflect.get(dataToEvaluate[0],key)}`)
+        //console.log(values)
+/*
+        console.log("This is dataToEvaluate within BollingerBands.generateOneSetOfDataPoints:");
+        let keys = Object.keys(dataToEvaluate[0])
+        let values = keys.map(key => `${key}: ${Reflect.get(dataToEvaluate[0],key)}`)
+        console.log(values)
+
+ */
+
         this.mean = this.generateMean(dataToEvaluate)
         //console.log('mean:' + mean)
         let standardDeviation=this.calculateStdDeviation(this.mean,dataToEvaluate)
         return standardDeviation
       }
+
       generateMean(dataToEvaluate)
       {
         if(dataToEvaluate.length<1)
@@ -131,6 +157,7 @@ export default class BollingerBands {
         }
         return (total/parseFloat(dataToEvaluate.length))
       }
+
 
       calculateStdDeviation(meanIn,dataToEvaluate)
       {
@@ -152,6 +179,12 @@ export default class BollingerBands {
 
       colllectSubsetOfDateToEvaluate(endAddress,dataToEvaluate)
       {
+        /*
+        console.log("This is dataToEvaluate within BollingerBands.colllectSubsetOfDateToEvaluate:");
+        let keys = Object.keys(dataToEvaluate[0])
+        let values = keys.map(key => `${key}: ${Reflect.get(dataToEvaluate[0],key)}`)
+        console.log(values)
+*/
         let subSetOfData=[];
         //console.log('endAddress-this.numberOfDaysToLookBack: ' + (endAddress-this.numberOfDaysToLookBack))
         for(let i=(endAddress-this.numberOfDaysToLookBack);i<endAddress;++i)
@@ -179,6 +212,14 @@ export default class BollingerBands {
 
       buildStandardChartDataFromEndPointData(endPointDataToConvert)
       {
+        /*
+        console.log("This is endPointDataToConvert within BollingerBands.buildStandardChartDataFromEndPointData:");
+        let keys = Object.keys(endPointDataToConvert[0])
+        let values = keys.map(key => `${key}: ${Reflect.get(endPointDataToConvert[0],key)}`)
+        console.log(values)
+
+         */
+
         let chartData=[];
         for(let i=0;i<endPointDataToConvert.length;++i)
         {

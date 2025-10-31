@@ -5,11 +5,34 @@ export default class StandardMovingAverage {
     constructor(oneYearOfDataIn,numberOfDaystoLookBackIn) {
       this.oneYearOfData = oneYearOfDataIn;
       this.numberOfDaystoLookBack=numberOfDaystoLookBackIn;
+/*
+      console.log("This is accumulatedChartDataIn within StandardMovingAverage.Constructor:");
+      const keys = Object.keys(oneYearOfDataIn[0])
+      const values = keys.map(key => `${key}: ${Reflect.get(oneYearOfDataIn[0],key)}`)
+      console.log(values)
+
+ */
+
     }
 
     generateTheAverages(accumulatedChartDataIn)
     {
       this.accumulatedChartData=accumulatedChartDataIn;
+/*
+      console.log("This is accumulatedChartDataIn within StandardMovingAverage.generateTheAverages:");
+      const keys = Object.keys(accumulatedChartDataIn[0])
+      const values = keys.map(key => `${key}: ${Reflect.get(accumulatedChartDataIn[0],key)}`)
+      console.log(values)
+
+
+ */
+
+      //console.log("This is accumulatedChartDataIn within StandardMovingAverage.generateTheAverages:");
+      //for (let key in accumulatedChartDataIn) {
+      //  console.log(key);
+      //}
+
+
       //console.log("calling this.generateTheDataPointsSimpleMovingAverage, this.numberOfDaystoLookBack: " + this.numberOfDaystoLookBack + ', this.oneYearOfData.length: ' + this.oneYearOfData.length)
       let datapoints=this.generateTheDataPointsSimpleMovingAverage( this.numberOfDaystoLookBack,this.oneYearOfData)
 
@@ -68,11 +91,13 @@ export default class StandardMovingAverage {
     {
       //console.log('eodResponseInfo: ' + JSON.stringify(eodResponseInfo))    
       //console.log('generateTheDataPointsSimpleMovingAverage eodResponseInfo.length: ' + eodResponseInfo.length + ', numberOfDaystoLookBack: ' + numberOfDaystoLookBack)
-      if (eodResponseInfo.length < numberOfDaystoLookBack)
-      {
-        console.log('Returning: eodResponseInfo.length < numberOfDaystoLookBack')
-        return null;
-      }
+  /*
+      console.log("This is eodResponseInfo within StandardMovingAverage.generateTheDataPointsSimpleMovingAverage:");
+      const keys = Object.keys(eodResponseInfo[0])
+      const values = keys.map(key => `${key}: ${Reflect.get(eodResponseInfo[0],key)}`)
+      console.log(values)
+
+ */
 
       let dataPoints = [];
 
@@ -122,8 +147,8 @@ export default class StandardMovingAverage {
 
     generateTheUnrestrictedAverages()
     {
-      console.log("calling this.generateTheUnrestrictedAverages, this.numberOfDaystoLookBack: " + this.numberOfDaystoLookBack
-       + ', this.oneYearOfData.length: ' + this.oneYearOfData.length)
+      //console.log("calling this.generateTheUnrestrictedAverages, this.numberOfDaystoLookBack: " + this.numberOfDaystoLookBack
+      // + ', this.oneYearOfData.length: ' + this.oneYearOfData.length)
 
       let datapoints=this.generateTheDataPointsSimpleMovingAverage( this.numberOfDaystoLookBack,this.oneYearOfData)
 
