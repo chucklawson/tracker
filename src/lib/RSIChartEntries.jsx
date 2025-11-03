@@ -10,6 +10,20 @@ export default class RSIChartEntries {
         //console.log("BollingerBands valuesIn.length: " + this.standardValues.length)
         //console.log("BollingerBands adjustedValues.length: " + this.adjustedToContainFullYearOfDataValues.length)
         //console.log("BollingerBands numberOfDaystoLookBack: " + this.numberOfDaystoLookBack)
+      /*
+      console.log("This is standardValuesIn within RSIChartEntries.constructor: ");
+      let keys = Object.keys(standardValuesIn[0])
+      let values = keys.map(key => `${key}: ${Reflect.get(standardValuesIn[0],key)}`)
+      console.log(values)
+
+      console.log("This is fullYearOfDataValuesIn within RSIChartEntries.constructor: ");
+       keys = Object.keys(fullYearOfDataValuesIn[0])
+       values = keys.map(key => `${key}: ${Reflect.get(fullYearOfDataValuesIn[0],key)}`)
+      console.log(values)
+
+       */
+
+
       }
 
     generateRsiValues()
@@ -90,6 +104,18 @@ export default class RSIChartEntries {
         //console.log('lastRSIChartValue: ' + JSON.stringify(lastRSIChartValue))
         //console.log('generateASucessiveRSIvalue dataToEavaluate: ' + JSON.stringify(dataToEavaluate))
 
+        /*
+        console.log("This is lastRSIChartValue within RSIChartEntries.generateASucessiveRSIvalue: ");
+        let keys = Object.keys(lastRSIChartValue)
+        let values = keys.map(key => `${key}: ${Reflect.get(lastRSIChartValue,key)}`)
+        console.log(values)
+
+        console.log("This is dataToEavaluate within RSIChartEntries.generateASucessiveRSIvalue: ");
+        keys = Object.keys(dataToEavaluate)
+        values = keys.map(key => `${key}: ${Reflect.get(dataToEavaluate,key)}`)
+        console.log(values)
+         */
+
         let meanMultiplier = parseFloat((numberOfDaysToLookBack-1))
         //console.log('meanMultiplier: ' + meanMultiplier)
 
@@ -128,7 +154,19 @@ export default class RSIChartEntries {
 
       generateFirstRSIvalue(dataToEvaluate,lastClose)
       {
-        //console.log('dataToEvaluate.length: ' + dataToEvaluate.length + ', lastClose: ' + lastClose)
+        /*
+        console.log('dataToEvaluate.length: ' + dataToEvaluate.length + ', lastClose: ' + lastClose)
+
+        console.log("This is dataToEvaluate within RSIChartEntries.generateFirstRSIvalue: ");
+        let keys = Object.keys(dataToEvaluate[0])
+        let values = keys.map(key => `${key}: ${Reflect.get(dataToEvaluate[0],key)}`)
+        console.log(values)
+
+         */
+
+
+
+
         if(dataToEvaluate.length<1)
         {
             return 0.0
@@ -161,6 +199,14 @@ export default class RSIChartEntries {
 
       calculateMeanForUpwardMovements(dataToEvaluate,lastClose)
       {
+        /*
+        console.log("This is dataToEvaluate within RSIChartEntries.calculateMeanForUpwardMovements: ");
+        let keys = Object.keys(dataToEvaluate[0])
+        let values = keys.map(key => `${key}: ${Reflect.get(dataToEvaluate[0],key)}`)
+        console.log(values)
+
+         */
+
         let total=0.0;
         let meanCounter=parseFloat(dataToEvaluate.length)
         let currentRefClosingPrice=lastClose;
@@ -208,6 +254,14 @@ export default class RSIChartEntries {
 
       colllectSubsetOfDateToEvaluate(endAddress,dataToEvaluate)
       {
+/*
+        console.log("This is dataToEvaluate within RSIChartEntries.colllectSubsetOfDateToEvaluate: ");
+        let keys = Object.keys(dataToEvaluate[0])
+        let values = keys.map(key => `${key}: ${Reflect.get(dataToEvaluate[0],key)}`)
+        console.log(values)
+
+ */
+
         let subSetOfData=[];
         //console.log('endAddress-this.numberOfDaysToLookBack: ' + (endAddress-this.numberOfDaysToLookBack))
         for(let i=(endAddress-this.numberOfDaysToLookBack);i<endAddress;++i)
@@ -220,6 +274,14 @@ export default class RSIChartEntries {
 
       findStartAddressBasedOnDate(dataToEvaluate,dateToFind)
       {
+/*
+        console.log("This is dataToEvaluate within RSIChartEntries.findStartAddressBasedOnDate: ");
+        let keys = Object.keys(dataToEvaluate[0])
+        let values = keys.map(key => `${key}: ${Reflect.get(dataToEvaluate[0],key)}`)
+        console.log(values)
+
+ */
+
         //console.log('dataToEvaluate: ' + JSON.stringify(dataToEvaluate))
         //console.log('dateToFind: ' + JSON.stringify(dateToFind))
         let address=-1;

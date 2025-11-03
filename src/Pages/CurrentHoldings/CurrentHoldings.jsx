@@ -25,8 +25,8 @@ const CURRENT_HOLDINGS =
     },
     {
       ticker: "AAPL",
-      costBasis: '230.01',
-      unitsOnHand: 30,
+      costBasis: '235.65',
+      unitsOnHand: 35,
       calculateAccumulatedProfitLoss: true,
     },
     {

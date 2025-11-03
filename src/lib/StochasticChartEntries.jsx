@@ -1,25 +1,38 @@
 import StochasticChartData from "./StochasticChartData.jsx"
-import StandardMovingAverage from './StandardMovingAverage.jsx'
-import DataPoint from "./DataPoint.jsx";
+//import StandardMovingAverage from './StandardMovingAverage.jsx'
+//import DataPoint from "./DataPoint.jsx";
 
 export default class StochasticChartEntries {
     constructor(standardValuesIn,fullYearOfDataValuesIn,slowInidcatorDaysToLookBackIn,fastInidcatorDaysToLookBackIn) {
+/*
+      console.log("This is standardValuesIn within StochasticChartEntries.constructor: ");
+      let keys = Object.keys(standardValuesIn[0])
+      let values = keys.map(key => `${key}: ${Reflect.get(standardValuesIn[0],key)}`)
+      console.log(values)
+
+      console.log("This is fullYearOfDataValuesIn within StochasticChartEntries.constructor: ");
+      keys = Object.keys(fullYearOfDataValuesIn[0])
+      values = keys.map(key => `${key}: ${Reflect.get(fullYearOfDataValuesIn[0],key)}`)
+      console.log(values)
+*/
         this.standardValues = standardValuesIn;
         this.fullYearOfDataValues = fullYearOfDataValuesIn;
         this.slowInidcatorDaysToLookBack=slowInidcatorDaysToLookBackIn;
         this.fastInidcatorDaysToLookBack=fastInidcatorDaysToLookBackIn;
-        //console.log("adjustedToContainFullYearOfDataValuesIn: "+ JSON.stringify(adjustedToContainFullYearOfDataValuesIn))
 
-        //console.log("BollingerBands valuesIn.length: " + this.standardValues.length)
-        //console.log("BollingerBands adjustedValues.length: " + this.adjustedToContainFullYearOfDataValues.length)
-        //console.log("BollingerBands numberOfDaystoLookBack: " + this.numberOfDaystoLookBack)
       }
 
     generateStochasticValues()
     {
         let fastStochasticValues=this.generateFastStochasticValues(this.fastInidcatorDaysToLookBack)        
         //console.log('fastStochasticValues: ' + JSON.stringify(fastStochasticValues))
-
+/*
+      console.log("fastStochasticValues.length: "+fastStochasticValues.length);
+      console.log("This is fastStochasticValues within StochasticChartEntries.generateSlowStochasticValues: ");
+      let keys = Object.keys(fastStochasticValues[0])
+      let values = keys.map(key => `${key}: ${Reflect.get(fastStochasticValues[0],key)}`)
+      console.log(values)
+*/
         let slowStochasticValues=this.generateSlowStochasticValues(fastStochasticValues,this.slowInidcatorDaysToLookBack)
 
         let stochasticData=this.loadChartData(fastStochasticValues,slowStochasticValues)
@@ -31,6 +44,19 @@ export default class StochasticChartEntries {
 
     loadChartData(fastStochasticValues,slowStochasticValues)
     {
+      /*
+      console.log("This is fastStochasticValues within StochasticChartEntries.loadChartData: ");
+      let keys = Object.keys(fastStochasticValues)
+      let values = keys.map(key => `${key}: ${Reflect.get(fastStochasticValues,key)}`)
+      console.log(values)
+
+      console.log("This is slowStochasticValues within StochasticChartEntries.loadChartData: ");
+      keys = Object.keys(slowStochasticValues[0])
+      values = keys.map(key => `${key}: ${Reflect.get(slowStochasticValues[0],key)}`)
+      console.log(values)
+*/
+
+
         let stochasticChartData=[]
         //console.log('fastStochasticValues: ' + JSON.stringify(fastStochasticValues))
         let startingAddressFastValues = this.findStartAddressBasedOnDate(fastStochasticValues,this.standardValues[0].date)
@@ -45,6 +71,7 @@ export default class StochasticChartEntries {
         
         for(let i=startingAddressFastValues,j=startingAddressSlowValues;i<fastStochasticValues.length;++i,++j)
         {
+          //console.log("fastStochasticValues[i].dateOfClose" + fastStochasticValues[i].dateOfClose);
             let aStochasticChartDataEntry=new StochasticChartData(fastStochasticValues[i].dateOfClose,fastStochasticValues[i].stochasticValue,slowStochasticValues[j].stochasticValue)
             stochasticChartData.push(aStochasticChartDataEntry)
         }
@@ -54,6 +81,16 @@ export default class StochasticChartEntries {
 
     generateSlowStochasticValues(fastStochasticValues,numberOfDaysToLookBack)
     {
+/*
+      console.log("fastStochasticValues.length: "+fastStochasticValues.length);
+      console.log("This is fastStochasticValues within StochasticChartEntries.generateSlowStochasticValues: ");
+      let keys = Object.keys(fastStochasticValues[0])
+      let values = keys.map(key => `${key}: ${Reflect.get(fastStochasticValues[0],key)}`)
+      console.log(values)
+
+*/
+
+
         let dataPontsToEvaluate=[]
 
         for(let i=0;i<fastStochasticValues.length;++i)
