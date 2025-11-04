@@ -95,8 +95,23 @@ export function dailyValues(standardValuesIn, adjustedToContainFullYearOfDataVal
 // adjustedToContainFullYearOfDataValuesIn are those from the rest endpoint for the time period selected + a year
 // accumulatedChartDataIn contains the chart data excluding bollingerBands... so add them and give it back
 export function bollingerBands(standardValuesIn, adjustedToContainFullYearOfDataValuesIn, accumulatedChartDataIn)
-{ 
-    
+{
+
+  console.log("This is standardValuesIn within CalculateAverages.bollingerBands: ");
+  let keys = Object.keys(standardValuesIn[0])
+  let values = keys.map(key => `${key}: ${Reflect.get(standardValuesIn[0],key)}`)
+  console.log(values)
+
+  console.log("This is adjustedToContainFullYearOfDataValuesIn within CalculateAverages.bollingerBands: ");
+  keys = Object.keys(adjustedToContainFullYearOfDataValuesIn[0])
+  values = keys.map(key => `${key}: ${Reflect.get(adjustedToContainFullYearOfDataValuesIn[0],key)}`)
+  console.log(values)
+
+  console.log("This is accumulatedChartDataIn within CalculateAverages.bollingerBands: ");
+  keys = Object.keys(accumulatedChartDataIn[0])
+  values = keys.map(key => `${key}: ${Reflect.get(accumulatedChartDataIn[0],key)}`)
+  console.log(values)
+
     if(standardValuesIn.length === undefined)
     {
         console.log("standardValuesIn.length === undefined")

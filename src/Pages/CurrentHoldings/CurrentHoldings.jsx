@@ -158,9 +158,9 @@ const CURRENT_HOLDINGS =
       calculateAccumulatedProfitLoss: true,
     },
     {
-      ticker: "SBUX",
-      costBasis: '92.14',
-      unitsOnHand: 30,
+      ticker: "PLTR",
+      costBasis: '190.90',
+      unitsOnHand: 8,
       calculateAccumulatedProfitLoss: true,
     },
     {
